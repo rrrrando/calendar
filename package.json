@@ -1,0 +1,12 @@
+{
+  "name": "calendar",
+  "private": true,
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "got": "^9.6.0",
+    "ical-generator": "^1.6.0",
+    "moment": "^2.24.0"
+  }
+}

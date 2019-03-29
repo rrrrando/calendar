@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "name": "calendar",
+    "builds": [
+        { "src": "index.js", "use": "@now/node" }
+    ]
+}

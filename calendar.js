@@ -48,14 +48,13 @@ async function calendar(teacher_id) {
   );
 
   const cal = ical({
-    timezone: "EET"
   });
   
   flatten(sourceData.map(d => d.body).map(processWeek)).forEach(d => {
     cal.createEvent({
-      start: moment(d.day + " " + d.start, "YYYY-MM-DD HH:mm"),
-      end: moment(d.day + " " + d.stop, "YYYY-MM-DD HH:mm"),
-      timestamp: moment(d.day + " " + d.start, "YYYY-MM-DD HH:mm"),
+      start: moment(moment.tz(d.day + " " + d.start, "YYYY-MM-DD HH:mm", "Europe/Tallinn").utc().format()),
+      end: moment(moment.tz(d.day + " " + d.stop, "YYYY-MM-DD HH:mm", "Europe/Tallinn").utc().format()),
+      timestamp: moment(moment.tz(d.day + " " + d.start, "YYYY-MM-DD HH:mm", "Europe/Tallinn").utc().format()),
       summary: d.summary
     });
   });

@@ -48,7 +48,7 @@ async function calendar(teacher_id) {
   );
 
   const cal = ical({
-    timezone: "Europe/Tallinn"
+    timezone: "Eastern European Time"
   });
   
   flatten(sourceData.map(d => d.body).map(processWeek)).forEach(d => {
